@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="ro">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ConQUIZtador se întoarce! &bullet; quiztactic.com</title>
+    <meta
+      name="description"
+      content="Jocul de cultură generală care te ajută să înveți lucruri noi într-un mod competitiv și distractiv
+	renaște sub numele QuizTactic!"
+    />
+    <link rel="stylesheet" href="/static/app.css" />
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-4SFHVGSZ5K"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+
+      gtag("config", "G-4SFHVGSZ5K");
+    </script>
+  </head>
+  <body>
+    <main>
+      <div class="ornament" />
+      <div class="wrapper">
+        <h1>ConQUIZtador <span> se întoarce!</span></h1>
+        <h2>
+          Jocul de cultură generală care te ajută să înveți lucruri noi într-un
+          mod competitiv și distractiv renaște sub numele
+          <strong>"QuizTactic"</strong> !
+        </h2>
+        <form action="" method="post" on:submit="{handleForm}">
+          <input
+            bind:value="{email}"
+            type="email"
+            aria-label="email"
+            placeholder="email"
+            required
+          />
+          <!-- <div
+		bind:this={grecaptchaElement}
+		class="g-recaptcha"
+		data-sitekey="6Ldt2QcfAAAAALIOCIrs5Zr1THsuUpS1AjGhaOZs"
+		data-theme="dark"
+		data-callback="onSubmit"
+	/> -->
+
+          <input type="submit" value="Ține-mă la curent!" />
+        </form>
+
+        <p>
+          Lasă-ne emailul tău pentru a primi informații despre lansarea jocului!
+          <br />Vom invita pe câțiva dintre cei înscriși pentru a ne ajuta cu
+          testarea versiunii Beta.
+        </p>
+        <p>Persoane înscrise până acum: <span id="registeredCount"></span></p>
+      </div>
+
+      <footer style="left: 50%; transform: translateX(-50%)">
+        Made by
+        <a href="https://caruxell.com" target="_blank" rel="noopener"
+          >Caruxell Software SRL</a
+        >
+      </footer>
+    </main>
+  </body>
+</html>
+<script>
+  const fetchRegisteredCount = async () => {
+    const container = document.querySelector("#registeredCount");
+
+    // const req = await fetch("");
+    // const res = await req.json();
+
+    container.innerText =
+      // res?.count ||
+
+      "17";
+  };
+
+  fetchRegisteredCount();
+</script>
