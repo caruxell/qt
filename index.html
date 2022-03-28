@@ -36,7 +36,7 @@
           mod competitiv și distractiv renaște sub numele
           <strong>"QuizTactic"</strong> !
         </h2>
-        <form action="" method="post" on:submit="{handleForm}">
+        <form>
           <input
             bind:value="{email}"
             type="email"
@@ -73,6 +73,38 @@
   </body>
 </html>
 <script>
+  const handleForm = async (e) => {
+    e.preventDefault();
+
+    window.alert(
+      `Te-ai înregistrat cu succes! 
+Îți mulțumim că faci parte din echipa noastră!`
+    );
+    //     const options = {
+    //       method: "post",
+    //       headers: {
+    //         "Content-Type": "application/json",
+    //       },
+    //       body: JSON.stringify({
+    //         // token,
+    //         email,
+    //       }),
+    //     };
+    //     const request = await fetch("/back-end/register", options);
+    //     const json = await request.json();
+    //     if (json.status === "success")
+    //       window.alert(
+    //         `Te-ai înregistrat cu succes!
+    // Îți mulțumim că faci parte din echipa noastră!`
+    //       );
+    //     else if (json.status === "error") {
+    //       window.alert(
+    //         "A apărut o eroare. Este posibil că acest email să fie înscris deja!"
+    //       );
+    //     }
+    return false;
+  };
+  document.querySelector("form").addEventListener("submit", handleForm);
   const fetchRegisteredCount = async () => {
     const container = document.querySelector("#registeredCount");
 
