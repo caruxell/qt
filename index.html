@@ -73,48 +73,63 @@
   </body>
 </html>
 <script>
+  // const origin = "http://localhost:4000";
+  const origin = "https://b.quiztactic.com";
+
   const handleForm = async (e) => {
     e.preventDefault();
 
-    window.alert(
-      `Te-ai înregistrat cu succes! 
-Îți mulțumim că faci parte din echipa noastră!`
-    );
-    //     const options = {
-    //       method: "post",
-    //       headers: {
-    //         "Content-Type": "application/json",
-    //       },
-    //       body: JSON.stringify({
-    //         // token,
-    //         email,
-    //       }),
-    //     };
-    //     const request = await fetch("/back-end/register", options);
-    //     const json = await request.json();
-    //     if (json.status === "success")
-    //       window.alert(
-    //         `Te-ai înregistrat cu succes!
-    // Îți mulțumim că faci parte din echipa noastră!`
-    //       );
-    //     else if (json.status === "error") {
-    //       window.alert(
-    //         "A apărut o eroare. Este posibil că acest email să fie înscris deja!"
-    //       );
-    //     }
+    const email = e.target.querySelector("input[type=email]").value;
+    if (!email) window.alert("Nu ai introdus un email");
+
+    const options = {
+      method: "post",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        // token,
+        email,
+      }),
+    };
+    try {
+      const request = await fetch(`${origin}/api/register`, options);
+      const json = await request.json();
+      if (json.status === "success")
+        window.alert(
+          `Te-ai înregistrat cu succes!
+    Îți mulțumim că faci parte din echipa noastră!`
+        );
+      else if (json.status === "error") {
+        window.alert(
+          "A apărut o eroare. Este posibil că acest email să fie înscris deja!"
+        );
+      }
+    } catch (err) {
+      if (json.status === "error") {
+        window.alert(
+          "A apărut o eroare. Este posibil că acest email să fie înscris deja!"
+        );
+      }
+    }
     return false;
   };
   document.querySelector("form").addEventListener("submit", handleForm);
   const fetchRegisteredCount = async () => {
     const container = document.querySelector("#registeredCount");
 
-    // const req = await fetch("");
-    // const res = await req.json();
+    container.innerText = "17";
+    setInterval(async () => {
+      try {
+        const req = await fetch(`${origin}/api/email-count`);
+        const res = await req.json();
+        const { count } = res;
 
-    container.innerText =
-      // res?.count ||
-
-      "17";
+        container.innerText = count;
+      } catch (err) {
+        console.error(err);
+      }
+    }, 1500);
   };
 
   fetchRegisteredCount();
