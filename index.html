@@ -53,7 +53,7 @@
           distractiv renaște sub numele
           <strong>"QuizTactic"</strong> !
         </h2>
-        <form>
+        <!-- <form>
           <input
             bind:value="{email}"
             type="email"
@@ -61,23 +61,29 @@
             placeholder="email"
             required
           />
-          <!-- <div
+          <div
 		bind:this={grecaptchaElement}
 		class="g-recaptcha"
 		data-sitekey="6Ldt2QcfAAAAALIOCIrs5Zr1THsuUpS1AjGhaOZs"
 		data-theme="dark"
 		data-callback="onSubmit"
-	/> -->
+	/>
 
           <input type="submit" value="Ține-mă la curent!" />
-        </form>
+        </form> -->
 
-        <p>
+        <!-- <p>
           Lasă-ne emailul tău pentru a primi informații despre lansarea jocului!
           <br />Vom invita pe câțiva dintre cei înscriși pentru a ne ajuta cu
           testarea versiunii Beta.
+        </p> -->
+        <p>
+          Mulțumim tuturor persoanelor care s-au înscris! Pentru moment, nu mai
+          acceptăm înscrieri noi. Continuă să vizitezi acest website frecvent
+          pentru a afla despre progresul proiectului, dacă nu ai reușit să te
+          înscrii.
         </p>
-        <p>Persoane înscrise până acum: <span id="registeredCount"></span></p>
+        <p>Persoane înscrise până acum: <span id="registeredCount">58</span></p>
       </div>
 
       <footer style="left: 50%; transform: translateX(-50%)">
@@ -135,18 +141,18 @@
   const fetchRegisteredCount = async () => {
     const container = document.querySelector("#registeredCount");
 
-    container.innerText = "17";
-    setInterval(async () => {
-      try {
-        const req = await fetch(`${origin}/api/email-count`);
-        const res = await req.json();
-        const { count } = res;
+    container.innerText = "58";
+    // setInterval(async () => {
+    //   try {
+    //     const req = await fetch(`${origin}/api/email-count`);
+    //     const res = await req.json();
+    //     const { count } = res;
 
-        container.innerText = count;
-      } catch (err) {
-        console.error(err);
-      }
-    }, 1500);
+    //     container.innerText = count;
+    //   } catch (err) {
+    //     console.error(err);
+    //   }
+    // }, 1500);
   };
 
   fetchRegisteredCount();
