@@ -9,6 +9,7 @@
       content="Jocul de cultură generală care te ajută să înveți lucruri noi într-un mod competitiv și distractiv
 	renaște sub numele QuizTactic!"
     />
+    <meta name="theme-color" content="#000" />
 
     <!-- https://www.facebook.com/quiztacticgame -->
     <!-- https://www.instagram.com/quiztactic/ -->
@@ -26,7 +27,74 @@
         ]
       }
     </script>
-    <link rel="stylesheet" href="/static/app.css" />
+    <style>
+      body {
+        background-color: black;
+        color: white;
+        margin: auto;
+        width: 100%;
+        max-width: 800px;
+        font-family: "DM Sans";
+        font-display: swap;
+      }
+      .wrapper {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        box-sizing: border-box;
+        padding: 35px;
+        width: 100%;
+        max-width: 800px;
+      }
+      .ornament {
+        background: radial-gradient(
+          94% 58.3% at 50.3% 82.6%,
+          #2a2541 0%,
+          rgb(17, 16, 19) 100%
+        );
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 100%;
+        height: 100vh;
+      }
+      h1 {
+        font-family: "DM Sans", sans-serif;
+        font-display: swap;
+        font-size: 100px;
+        text-align: center;
+        font-weight: 700;
+        margin: 0;
+      }
+      h1 span {
+        display: block;
+        color: #7f5eff;
+      }
+      h2 {
+        font-family: "DM Sans", sans-serif;
+        font-display: swap;
+        font-style: normal;
+        text-align: center;
+        font-weight: 400;
+        color: rgb(232, 227, 253);
+        line-height: 40px;
+        font-size: 32px;
+        line-height: 1.5em;
+      }
+      p {
+        text-align: center;
+        line-height: 1.5em;
+      }
+    </style>
+    <link
+      rel="preload"
+      href="/static/app.css"
+      as="style"
+      onload="this.onload=null;this.rel='stylesheet'"
+    />
+    <noscript> <link rel="stylesheet" href="/static/app.css" /></noscript>
 
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script
@@ -42,6 +110,10 @@
 
       gtag("config", "G-4SFHVGSZ5K");
     </script>
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+    <link rel="manifest" href="/site.webmanifest" />
   </head>
   <body>
     <main>
@@ -51,7 +123,7 @@
         <h2>
           Jocul care te ajută să înveți lucruri noi într-un mod competitiv și
           distractiv renaște sub numele
-          <strong>"QuizTactic"</strong> !
+          <strong>"QuizTactic"</strong>!
         </h2>
         <!-- <form>
           <input
@@ -84,6 +156,11 @@
           înscrii.
         </p>
         <p>Persoane înscrise până acum: <span id="registeredCount">58</span></p>
+
+        <p>
+          <a class="bt filled" href="https://demo.quiztactic.com">Demo</a>
+          <a class="bt" href="/blog/ro/">Blog</a>
+        </p>
       </div>
 
       <footer style="left: 50%; transform: translateX(-50%)">
@@ -137,23 +214,23 @@
     }
     return false;
   };
-  document.querySelector("form").addEventListener("submit", handleForm);
-  const fetchRegisteredCount = async () => {
-    const container = document.querySelector("#registeredCount");
+  // document.querySelector("form").addEventListener("submit", handleForm);
+  // const fetchRegisteredCount = async () => {
+  //   const container = document.querySelector("#registeredCount");
 
-    container.innerText = "58";
-    // setInterval(async () => {
-    //   try {
-    //     const req = await fetch(`${origin}/api/email-count`);
-    //     const res = await req.json();
-    //     const { count } = res;
+  //   container.innerText = "58";
+  //   // setInterval(async () => {
+  //   //   try {
+  //   //     const req = await fetch(`${origin}/api/email-count`);
+  //   //     const res = await req.json();
+  //   //     const { count } = res;
 
-    //     container.innerText = count;
-    //   } catch (err) {
-    //     console.error(err);
-    //   }
-    // }, 1500);
-  };
+  //   //     container.innerText = count;
+  //   //   } catch (err) {
+  //   //     console.error(err);
+  //   //   }
+  //   // }, 1500);
+  // };
 
-  fetchRegisteredCount();
+  // fetchRegisteredCount();
 </script>

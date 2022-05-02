@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="ro">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>QuizTactic Blog &bullet; quiztactic.com</title>
+    <meta
+      name="description"
+      content="Bine ai venit pe Blogul QuizTactic! Aici poți citi articole despre viziunea pe care o avem asupra proiectului QuizTactic, precum și progresul nostru."
+    />
+    <style>
+      header {
+        box-sizing: border-box;
+        padding: 15px 35px;
+      }
+      header a {
+        text-decoration: none;
+      }
+      header a:hover {
+        text-decoration: underline;
+      }
+      body {
+        background-color: black;
+        color: white;
+        margin: auto;
+        width: 100%;
+        max-width: 800px;
+        font-family: "DM Sans";
+        font-display: swap;
+      }
+      main {
+        min-height: 100vh;
+      }
+      h1 {
+        font-family: "DM Sans", sans-serif;
+        font-display: swap;
+        font-size: 80px;
+        text-align: left;
+        font-weight: 700;
+        margin: 0;
+        margin-bottom: 30px;
+      }
+      h2 {
+        font-family: "DM Sans", sans-serif;
+        font-display: swap;
+        font-style: normal;
+        line-height: 40px;
+        font-size: 32px;
+        line-height: 1.5em;
+      }
+      .a-card {
+        display: inline-block;
+        border-radius: 30px;
+        padding: 35px;
+        vertical-align: top;
+        width: calc(33% - 30px);
+        box-sizing: border-box;
+        border-width: 2px;
+        border-style: solid;
+        border-color: rgb(232, 227, 253);
+        min-width: 140px;
+        cursor: pointer;
+        margin: 15px;
+        transition: all 0.15s ease-in-out;
+      }
+      .a-card:hover {
+        background-color: rgb(232, 227, 253);
+        color: black !important;
+      }
+      .b-wrapper {
+        box-sizing: border-box;
+        padding: 35px;
+        padding-top: 0;
+        margin-top: 35px;
+        width: 100%;
+        max-width: 800px;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        width: 100%;
+        left: 50%;
+        transform: translateX(-50%);
+      }
+    </style>
+    <link
+      rel="preload"
+      href="/static/app.css"
+      as="style"
+      onload="this.onload=null;this.rel='stylesheet'"
+    />
+    <noscript> <link rel="stylesheet" href="/static/app.css" /></noscript>
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-4SFHVGSZ5K"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+
+      gtag("config", "G-4SFHVGSZ5K");
+    </script>
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+  </head>
+  <body>
+    <main>
+      <header>
+        <a href="/"><h2>QuizTactic</h2></a>
+      </header>
+      <div class="b-wrapper">
+        <h1>Blog</h1>
+        <a href="/blog/ro/si-asa-incepe-aventura">
+          <div class="a-card">
+            <h2>Și așa începe aventura...</h2>
+          </div></a
+        >
+      </div>
+    </main>
+    <footer style="left: 50%; transform: translateX(-50%)">
+      Made by
+      <a href="https://caruxell.com" target="_blank" rel="noopener"
+        >Caruxell Software SRL</a
+      >
+    </footer>
+  </body>
+</html>
